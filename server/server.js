@@ -30,6 +30,9 @@ if (process.env.FRONTEND_URL) {
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(morgan('dev'));
 
+app.get('/', (req, res) => res.json({ status: 'ProjectNest API is running' }));
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/projects', projectRoutes);

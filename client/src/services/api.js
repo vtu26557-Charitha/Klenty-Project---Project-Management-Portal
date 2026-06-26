@@ -17,7 +17,12 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (!error.response) {
-      return Promise.reject({ message: 'Network error' });
+      return Promise.reject({
+        message: 'Unable to connect to the server. Please try again later.',
+      });
+    }
+    if (error.response.status === 401) {
+      localStorage.removeItem('projectnest_token');
     }
     return Promise.reject(error.response.data || error);
   }

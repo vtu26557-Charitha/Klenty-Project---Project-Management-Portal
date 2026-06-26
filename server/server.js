@@ -19,7 +19,15 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: ['http://localhost:306', 'http://127.0.0.1:306'], credentials: true }));
+const allowedOrigins = [
+  'http://localhost:306',
+  'http://127.0.0.1:306',
+  'https://klenty-project-project-management-p-rho.vercel.app'
+];
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(morgan('dev'));
 
 app.use('/api/auth', authRoutes);

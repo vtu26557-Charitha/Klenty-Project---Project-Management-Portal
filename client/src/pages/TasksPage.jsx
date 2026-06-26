@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { PlusCircleIcon, TrashIcon, DuplicateIcon } from '@heroicons/react/24/outline';
+import { PlusCircleIcon, TrashIcon } from '@heroicons/react/24/outline';
 import PageHeading from '../components/PageHeading.jsx';
 import Loader from '../components/Loader.jsx';
 import api from '../services/api.js';

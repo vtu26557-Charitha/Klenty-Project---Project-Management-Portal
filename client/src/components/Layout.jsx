@@ -1,7 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { motion } from 'framer-motion';
-import { MenuIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XCircleIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 const navItems = [
@@ -48,7 +48,7 @@ const Layout = () => {
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <button className="md:hidden" onClick={() => setOpen(!open)}>
-                <MenuIcon className="h-7 w-7 text-slate-100" />
+                <Bars3Icon className="h-7 w-7 text-slate-100" />
               </button>
               <Link to="/" className="font-semibold tracking-tight text-white">ProjectNest</Link>
             </div>

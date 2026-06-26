@@ -22,7 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = [
   'http://localhost:306',
   'http://127.0.0.1:306',
-  'https://klenty-project-project-management-p-rho.vercel.app'
+  'https://klenty-project-project-management-p-rho.vercel.app',
+  'https://klenty-project-project-management-portal-9nmi.onrender.com'
 ];
 if (process.env.FRONTEND_URL) {
   allowedOrigins.push(process.env.FRONTEND_URL);
